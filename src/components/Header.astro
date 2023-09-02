@@ -25,30 +25,15 @@ import Button from "./Button.astro";
         </li>
       </ul>
     </nav>
-    <button class="hidden md:block">
-      <img
-        src="/images/icon-hamburger.svg"
-        alt="hamburger icon"
-        width="32"
-        height="32"
-        loading="lazy"
-        id="menu"
-      />
-      <img
-        src="/images/icon-close.svg"
-        alt="close icon"
-        width="32"
-        height="32"
-        loading="lazy"
-        class="hidden"
-        id="close-menu"
-      />
-    </button>
+    <button
+      class="hidden md:block w-8 h-8 bg-bg-hamburger"
+      id="menu"
+      aria-label="menu button"></button>
   </div>
 </header>
 
 <nav
-  class="text-white bg-dark w-full h-screen text-center pt-16 bg-bg-pattern-mobile-nav bg-no-repeat bg-right-bottom hidden"
+  class="absolute text-white bg-dark w-full h-screen text-center pt-16 bg-bg-pattern-mobile-nav bg-no-repeat bg-right-bottom hidden z-20 px-5"
   id="menu-responsive"
 >
   <ul class="text-[20px] flex flex-col uppercase font-bold gap-14">
@@ -68,19 +53,10 @@ import Button from "./Button.astro";
 <script>
   const menu = document.getElementById("menu-responsive");
   const menuIcon = document.getElementById("menu");
-  const closeMenu = document.getElementById("close-menu");
 
   menuIcon.addEventListener("click", () => {
-    menuIcon.style.display = "none";
-    closeMenu.style.display = "block";
-    menu.classList.add("active");
-    document.body.classList.add("overflow-hidden");
-  });
-
-  closeMenu.addEventListener("click", () => {
-    menuIcon.style.display = "block";
-    closeMenu.style.display = "none";
-    menu.classList.remove("active");
-    document.body.classList.remove("overflow-hidden");
+    menu.classList.toggle("active");
+    menuIcon.classList.toggle("active");
+    document.body.classList.toggle("active");
   });
 </script>

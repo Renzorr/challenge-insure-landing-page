@@ -44,6 +44,8 @@ module.exports = {
 
         "bg-pattern-intro-left-desktop": "url(/images/bg-pattern-intro-left-desktop.svg)",
         "bg-pattern-intro-left-mobile": "url(/images/bg-pattern-intro-left-mobile.svg)",
+
+        "bg-hamburger": "url(/images/icon-hamburger.svg)",
       },
     },
   },
