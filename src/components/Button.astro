@@ -1,0 +1,16 @@
+---
+const { text, color } = Astro.props;
+
+const colorVariants = {
+  dark: "text-white border-white hover:bg-white hover:text-dark-purple",
+  light:
+    "text-dark-purple border-dark-purple hover:bg-dark-purple hover:text-white",
+};
+---
+
+<a
+  href="#"
+  class=`text-sm font-bold uppercase py-[10px] px-7 tracking-[1.7px] border-[2px] duration-200 ${colorVariants[color]} inline-block`
+>
+  {text}
+</a>

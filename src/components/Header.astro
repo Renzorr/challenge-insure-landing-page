@@ -1,0 +1,86 @@
+---
+import Button from "./Button.astro";
+---
+
+<header class="pt-[18px] pb-[17px] relative bg-white z-10 lg:px-5">
+  <div class="container flex items-center justify-between pl-[3px] pr-0">
+    <a href="#"
+      ><img
+        src="/images/logo.svg"
+        width="112"
+        height="18"
+        loading="lazy"
+        alt="insure logo"
+      /></a
+    >
+    <nav class="md:hidden">
+      <ul
+        class="text-sm flex items-center text-dark-gray font-bold tracking-[1.7px] uppercase"
+      >
+        <li><a href="#">How We Work</a></li>
+        <li class="ml-[28px]"><a href="#">Blog</a></li>
+        <li class="ml-[26px]"><a href="#">Account</a></li>
+        <li class="ml-[33.5px]">
+          <Button text="View Plans" color="light" />
+        </li>
+      </ul>
+    </nav>
+    <button class="hidden md:block">
+      <img
+        src="/images/icon-hamburger.svg"
+        alt="hamburger icon"
+        width="32"
+        height="32"
+        loading="lazy"
+        id="menu"
+      />
+      <img
+        src="/images/icon-close.svg"
+        alt="close icon"
+        width="32"
+        height="32"
+        loading="lazy"
+        class="hidden"
+        id="close-menu"
+      />
+    </button>
+  </div>
+</header>
+
+<nav
+  class="text-white bg-dark w-full h-screen text-center pt-16 bg-bg-pattern-mobile-nav bg-no-repeat bg-right-bottom hidden"
+  id="menu-responsive"
+>
+  <ul class="text-[20px] flex flex-col uppercase font-bold gap-14">
+    <li><a href="#">How We Work</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Account</a></li>
+    <li>
+      <a
+        href="#"
+        class="block w-full border-[1px] border-white py-4 hover:bg-white hover:text-dark duration-200"
+        >View Plans</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<script>
+  const menu = document.getElementById("menu-responsive");
+  const menuIcon = document.getElementById("menu");
+  const closeMenu = document.getElementById("close-menu");
+
+  menuIcon.addEventListener("click", () => {
+    menuIcon.style.display = "none";
+    closeMenu.style.display = "block";
+    menu.classList.add("active");
+    document.body.classList.add("overflow-hidden");
+  });
+
+  closeMenu.addEventListener("click", () => {
+    menuIcon.style.display = "block";
+    closeMenu.style.display = "none";
+    menu.classList.remove("active");
+    document.body.classList.remove("overflow-hidden");
+  });
+</script>

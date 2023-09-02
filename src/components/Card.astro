@@ -1,0 +1,19 @@
+---
+const { icon, title, text } = Astro.props;
+---
+
+<div class="max-w-[350px]">
+  <img
+    src={icon}
+    alt=""
+    aria-hidden="true"
+    width="86"
+    height="86"
+    loading="lazy"
+    class="inline-block mb-[31px]"
+  />
+  <h3 class="font-serif text-[28px] tracking-[-0.4px] mb-3">
+    {title}
+  </h3>
+  <p class="text-dark-gray leading-[26px]">{text}</p>
+</div>

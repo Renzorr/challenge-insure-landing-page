@@ -1,0 +1,72 @@
+---
+import FooterLinks from "./FooterLinks.astro";
+
+const SOCIAL_ICONS = [
+  {
+    alt: "facebook icon",
+    src: "/images/icon-facebook.svg",
+  },
+  {
+    alt: "twitter icon",
+    src: "/images/icon-twitter.svg",
+  },
+  {
+    alt: "pinterest icon",
+    src: "/images/icon-pinterest.svg",
+  },
+  {
+    alt: "instagram icon",
+    src: "/images/icon-instagram.svg",
+  },
+];
+
+const companyLinks = ["HOW WE WORK", "WHY INSURE?", "VIEW PLANS", "REVIEWS"];
+
+const helpLinks = ["FAQ", "TERMS OF USE", "PRIVACY POLICY", "COOKIES"];
+
+const contactLinks = ["SALES", "SUPPORT", "LIVE CHAT"];
+
+const otherLinks = ["CAREERS", "PRESS", "LICENSES"];
+---
+
+<footer
+  class="bg-light-gray pt-16 pb-[58px] bg-bg-pattern-footer bg-no-repeat bg-left-top lg:bg-bg-pattern-footer-mobile mt-[150px]"
+>
+  <div class="container">
+    <div
+      class="flex items-center justify-between lg:flex-col lg:gap-10 border-b-[1px] border-line pb-[34px]"
+    >
+      <a href="#"
+        ><img
+          src="/images/logo.svg"
+          width="112"
+          height="18"
+          loading="lazy"
+          alt="insure logo"
+        /></a
+      >
+      <ul class="flex items-center gap-4">
+        {
+          SOCIAL_ICONS.map((icon) => {
+            return (
+              <li>
+                <a href="#">
+                  <img src={icon.src} alt={icon.alt} />
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+
+    <div
+      class="font-karla flex gap-[174.5px] lg:gap-[50px] lg:flex-col lg:text-center pt-11"
+    >
+      <FooterLinks title="OUR COMPANY" links={companyLinks} />
+      <FooterLinks title="HELP ME" links={helpLinks} />
+      <FooterLinks title="CONTACT" links={contactLinks} />
+      <FooterLinks title="OTHERS" links={otherLinks} />
+    </div>
+  </div>
+</footer>

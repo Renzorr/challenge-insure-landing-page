@@ -1,0 +1,36 @@
+---
+import Button from "./Button.astro";
+---
+<h1 class="sr-only">Insure Landing Page Front-End Mentor</h1>
+<main
+  class="bg-dark-purple max-h-[600px] lg:max-h-none after:bg-bg-pattern-intro-right-desktop after:bg-no-repeat after:absolute after:w-[436px] after:h-[593px] after:right-0 after:top-0 lg:after:bg-bg-pattern-intro-right-mobile lg:after:w-[124px] lg:after:h-[330px] lg:after:top-[90%] before:bg-bg-pattern-intro-left-desktop before:bg-no-repeat before:absolute before:w-[195px] before:h-[504px] before:left-0 before:bottom-[-9%] lg:before:bg-bg-pattern-intro-left-mobile lg:before:w-[168px] lg:before:h-[165px] sm:before:bottom-[16%]"
+>
+  <div
+    class="container flex gap-5 lg:gap-[80px] pt-[106px] lg:pb-16 lg:pt-0 lg:flex-col-reverse"
+  >
+    <div class="text-white lg:text-center lg:px-5 pb">
+      <div class="bg-white w-[150px] h-[1px] mb-[62px] lg:hidden"></div>
+      <h2
+        class="font-serif text-[clamp(48px,6cqw,70px)] leading-[65px] max-w-[500px] lg:max-w-none mb-[26px] lg:mb-12"
+      >
+        Humanizing your insurance.
+      </h2>
+      <p class="max-w-[550px] lg:max-w-none leading-[26px] mb-[30px] lg:mb-14">
+        Get your life insurance coverage easier and faster. We blend our
+        expertise and technology to help you find the plan that’s right for you.
+        Ensure you and your loved ones are protected.
+      </p>
+      <Button text="View Plans" color="dark" />
+    </div>
+    <picture class="lg:w-full">
+      <img
+        src="/images/image-intro-desktop.jpg"
+        alt="hero Image"
+        width="540"
+        height="650"
+        loading="lazy"
+        class="lg:w-full object-cover"
+      />
+    </picture>
+  </div>
+</main>
